@@ -18,3 +18,4 @@ structopt = "0.3.26"
 wit-component = "0.215.0"
 wasm-compose = "0.215.0"
 wasi-virt = { git = "https://github.com/bytecodealliance/wasi-virt", rev = "dadd131d8cf8ed1ed4265e96350f5f166e27a339", default-features = false }
+rb-sys = { version = "*", default-features = false, features = ["stable-api-compiled-fallback"] }
