@@ -9,8 +9,6 @@ This document describes development setup and pointers for diving into this proj
 $ git clone https://github.com/ruby/ruby.wasm --recursive
 $ cd ruby.wasm
 $ ./bin/setup
-# Just for building vendor/jco (will be removed soon)
-$ rustup target add wasm32-wasi
 # Compile extension library
 $ bundle exec rake compile
 $ rake --tasks
@@ -117,6 +115,7 @@ $ gh run download <run-id>
 $ for pkg in cross-gem/pkg/ruby_wasm-*; do gem push $pkg; done
 $ gem build && gem push ruby_wasm-*.gem && rm ruby_wasm-*.gem
 $ (cd packages/gems/js/ && gem build && gem push js-*.gem && rm js-*.gem)
+$ rake bump_dev_version
 ```
 
 ## Release Channels
