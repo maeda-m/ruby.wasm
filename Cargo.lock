@@ -1356,6 +1356,7 @@ version = "0.0.0"
 dependencies = [
  "bytes",
  "magnus",
+ "rb-sys",
  "structopt",
  "wasi-vfs-cli",
  "wasi-virt",
