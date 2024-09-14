@@ -258,7 +258,8 @@ impl WasiVirt {
 
     fn map_dir(&self, guest_dir: String, host_dir: String) -> Result<(), Error> {
         self.virt(|virt| {
-            virt.fs().virtual_preopen(guest_dir, host_dir);
+            // NOTE: Out of stack space for file virtualization, use passive segments by decreasing the passive cutoff instead
+            virt.fs().passive_cutoff(0).virtual_preopen(guest_dir, host_dir);
             Ok(())
         })
     }
